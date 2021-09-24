@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">-->
+
+<!--  <TextView
+      android:id="@+id/test"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:textAlignment="center"
+      android:text="THIS IS FORM THE BOOK LIST FRAGMENT"
+      android:textSize="@dimen/_18sp"/>-->
+
+
+<androidx.core.widget.NestedScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bookScrollLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7FF"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <EditText
+            android:id="@+id/searchEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            android:padding="@dimen/_10dp"
+            android:drawableStart="@drawable/search"
+            android:hint="   Search"
+            android:imeOptions="actionSearch"
+            android:background="@drawable/custom_edittext"/>
+        <ProgressBar
+            android:id="@+id/searchProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productRecyclerView"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusableInTouchMode ="true"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_books" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView><!--
+</RelativeLayout>-->

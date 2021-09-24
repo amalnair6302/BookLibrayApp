@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestApp</string>
+    <string name="error_message">Alert</string>
+    <string name="ok_text">OK</string>
+</resources>

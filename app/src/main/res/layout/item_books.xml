@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/coverLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_14dp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/categoryCardLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10dp"
+            android:paddingEnd="@dimen/_10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_8dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+            <ImageView
+                android:id="@+id/bookCoverImage"
+                android:layout_width="114dp"
+                android:layout_height="162dp"
+                android:scaleType="fitXY"
+                tools:src="@drawable/img1" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14dp"
+        >
+        <TextView
+            android:id="@+id/bookTitle"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/black"
+            tools:text="THE OLD MAN AND THE SEA"
+            android:textSize="@dimen/_14sp" />
+
+        <TextView
+            android:id="@+id/bookAuthor"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="@dimen/_4dp"
+            android:layout_below="@id/bookTitle"
+            tools:text="Charles dickens"
+            android:textSize="@dimen/_14sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

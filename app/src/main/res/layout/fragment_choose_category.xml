@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F8F7FF">
+
+  <RelativeLayout
+      android:id="@+id/headerLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+      <ImageView
+          android:id="@+id/myImageView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:src="@drawable/pattern"
+          android:scaleType="center"/>
+
+      <TextView
+          android:id="@+id/headerText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:fontFamily="@font/montserrat_semibold"
+          android:padding="@dimen/_18dp"
+          android:text="Gutenberg Project"
+          android:textColor="@color/font_color"
+          android:textSize="40sp" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/headerText"
+          android:fontFamily="@font/montserrat_semibold"
+          android:layout_alignParentEnd="true"
+          android:justificationMode="inter_word"
+          android:paddingStart="@dimen/_24dp"
+          android:paddingEnd="@dimen/_24dp"
+          android:text="A social cataloging website that allows you to freely search its database of books, annotations, and reviews."
+          android:textColor="@color/black"
+          android:textSize="@dimen/_16sp" />
+
+
+  </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@id/headerLayout">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/categoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/productRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_category"
+                    tools:itemCount="3"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
