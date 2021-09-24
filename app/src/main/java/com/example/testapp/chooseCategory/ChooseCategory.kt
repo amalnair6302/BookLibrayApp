@@ -43,10 +43,8 @@ class ChooseCategory : Fragment(R.layout.fragment_choose_category),
     }
 
     private fun init() {
-        chooseCategoryViewModel =
-            ViewModelProvider(requireActivity()).get(ChooseCategoryViewModel::class.java)
+        chooseCategoryViewModel = ViewModelProvider(requireActivity()).get(ChooseCategoryViewModel::class.java)
         chooseCategoryViewModel.getCategoryList()
-
     }
 
     fun setObservers() {
@@ -55,8 +53,7 @@ class ChooseCategory : Fragment(R.layout.fragment_choose_category),
             categoryList = it
             chooseCategoryAdapter = ChooseCategoryAdapter(requireContext(), categoryList, this)
             fragmentChooseCategoryBinding.productRecyclerView.itemAnimator = DefaultItemAnimator()
-            fragmentChooseCategoryBinding.productRecyclerView.layoutManager =
-                LinearLayoutManager(context)
+            fragmentChooseCategoryBinding.productRecyclerView.layoutManager = LinearLayoutManager(context)
             fragmentChooseCategoryBinding.productRecyclerView.adapter = chooseCategoryAdapter
         })
     }
@@ -68,8 +65,7 @@ class ChooseCategory : Fragment(R.layout.fragment_choose_category),
     override fun onCategorySelected(category: CategoryModel) {
         val args = Bundle()
         args.putParcelable("Category", category)
-        Navigation.findNavController(fragmentChooseCategoryBinding.root)
-            .navigate(R.id.action_category_to_books, args)
+        Navigation.findNavController(fragmentChooseCategoryBinding.root).navigate(R.id.action_category_to_books, args)
     }
 
     override fun onDestroyView() {

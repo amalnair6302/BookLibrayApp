@@ -11,16 +11,12 @@ import com.example.testapp.databinding.ItemBooksBinding
 import com.example.testapp.model.Format
 import com.example.testapp.model.Results
 
-class ChooseBookAdapter(
-    private val context: Context?,
-    val onBookSelectedListener: ChooseBookFragment
-) : RecyclerView.Adapter<ChooseBookAdapter.ProductViewHolder>() {
+class ChooseBookAdapter(private val context: Context?, val onBookSelectedListener: ChooseBookFragment) : RecyclerView.Adapter<ChooseBookAdapter.ProductViewHolder>() {
 
     private val bookList = mutableListOf<Results>()
     private val TAG: String = ChooseCategoryAdapter::class.java.simpleName
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val itemBooksBinding =
-            ItemBooksBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val itemBooksBinding = ItemBooksBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProductViewHolder(itemBooksBinding)
     }
 
@@ -70,8 +66,7 @@ class ChooseBookAdapter(
         }
     }
 
-    class ProductViewHolder(val itemBooksBinding: ItemBooksBinding) :
-        RecyclerView.ViewHolder(itemBooksBinding.root)
+    class ProductViewHolder(val itemBooksBinding: ItemBooksBinding) : RecyclerView.ViewHolder(itemBooksBinding.root)
 
     interface OnBookelectedListener {
         fun onBookSelected(format: Format)

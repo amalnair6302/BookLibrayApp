@@ -59,8 +59,7 @@ class ChooseBookFragment : Fragment(R.layout.fragment_choose_book),
         when (item.itemId) {
             android.R.id.home -> {
                 Log.e(TAG, "Home button is pressed")
-                Navigation.findNavController(fragmentChooseBookBinding.root)
-                    .navigate(R.id.action_books_to_category)
+                Navigation.findNavController(fragmentChooseBookBinding.root).navigate(R.id.action_books_to_category)
                 return true
             }
         }
@@ -165,8 +164,7 @@ class ChooseBookFragment : Fragment(R.layout.fragment_choose_book),
     override fun onBookSelected(format: Format) {
         val args = Bundle()
         args.putParcelable("Formats", format)
-        Navigation.findNavController(fragmentChooseBookBinding.root)
-            .navigate(R.id.action_books_to_webview, args)
+        Navigation.findNavController(fragmentChooseBookBinding.root).navigate(R.id.action_books_to_webview, args)
     }
 
 }
